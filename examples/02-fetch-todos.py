@@ -1,7 +1,7 @@
 """
 Fetch list of TODOs from Logseq
 """
-from logspyk import LogseqAPI
+from logspyq import LogseqAPI
 
 logseq = LogseqAPI()
 

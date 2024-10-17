@@ -9,7 +9,7 @@ Python for Logseq API and Plugins
 ### Display notification in Logseq 
 
 ```python
-from logspyk import LogseqAPI
+from logspyq import LogseqAPI
 
 logseq = LogseqAPI()
 
@@ -20,7 +20,7 @@ logseq.UI.showMsg("Hello from Python!")
 ### Fetch all TODOs from Logseq
 
 ```python
-from logspyk import LogseqAPI
+from logspyq import LogseqAPI
 
 logseq = LogseqAPI()
 

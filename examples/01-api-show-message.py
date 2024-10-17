@@ -1,7 +1,7 @@
 """
 Use Logseq REST API to display notification in the Logseq desktop app.
 """
-from logspyk import LogseqAPI
+from logspyq import LogseqAPI
 
 logseq = LogseqAPI()
 
