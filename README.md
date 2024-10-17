@@ -24,3 +24,7 @@ logseq = LogseqAPI()
 todos = logseq.db.q("(task TODO)")
 print(todos)
 ```
+
+
+References:
+- [Logseq Local API Server](https://docs.logseq.com/#/page/local%20http%20server)
