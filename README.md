@@ -9,25 +9,30 @@ Python for Logseq API and Plugins
 ### Display notification in Logseq 
 
 ```python
+
 from logspyq import LogseqAPI
 
-logseq = LogseqAPI()
+logseq = LogseqAPI(auth_token="test")
 
-logseq.UI.showMsg("Hello from Python!")
+logseq.call("logseq.UI.showMsg", "Hello from Python!")
 ```
 
 
-### Fetch all TODOs from Logseq
+You can use the API in async code as-is:
 
 ```python
+import asyncio
 from logspyq import LogseqAPI
 
-logseq = LogseqAPI()
+logseq = LogseqAPI(auth_token="test")
 
-todos = logseq.db.q("(task TODO)")
-print(todos)
+
+async def main():
+    await logseq.call("logseq.UI.showMsg", "Hello from Python!")
+
+
+asyncio.run(main())
 ```
-
 
 References:
 - [Logseq Local API Server](https://docs.logseq.com/#/page/local%20http%20server)
