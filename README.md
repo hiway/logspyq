@@ -2,7 +2,9 @@
 
 Python for Logseq API and Plugins
 
+
 ## Examples:
+
 
 ### Display notification in Logseq 
 
@@ -13,6 +15,7 @@ logseq = LogseqAPI()
 
 logseq.UI.showMsg("Hello from Python!")
 ```
+
 
 ### Fetch all TODOs from Logseq
 
