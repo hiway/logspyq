@@ -22,23 +22,31 @@ class LogseqAPI:
         self.async_client = HttpxAsyncClient()
         self.headers = {"Authorization": f"Bearer {auth_token}"}
 
-    def _parse_json(self, response) -> dict:
+    def _parse_json(self, response) -> [dict|list|str]:
         try:
             return response.json()
         except JSONDecodeError:
-            # The "logseq.UI.showMsg" method returns
-            # string of random(?) characters instead of valid json.
-            return {"content": response.text, "error": "JSONDecodeError"}
+            # Some methods, such as "logseq.UI.showMsg" return
+            # invalid JSON / unquoted string
+            return response.text
 
-    def call(self, method: str, *args: List[str]) -> dict:
+    def call(self, method: str, *args: List[str]) -> [dict|list|str]:
         payload = {"method": method, "args": args}
-        response = self.client.post(self.url, headers=self.headers, json=payload)
+        response = self.client.post(
+            self.url,
+            headers=self.headers,
+            json=payload,
+        )
         response.raise_for_status()
         return self._parse_json(response)
 
     @awaitable(call)
-    async def call(self, method: str, *args: List[str]) -> dict:
+    async def call(self, method: str, *args: List[str]) -> [dict|list|str]:
         payload = {"method": method, "args": args}
-        response = await self.async_client.post(self.url, headers=self.headers, json=payload)
+        response = await self.async_client.post(
+            self.url,
+            headers=self.headers,
+            json=payload,
+        )
         response.raise_for_status()
         return self._parse_json(response)
