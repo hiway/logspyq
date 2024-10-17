@@ -5,4 +5,4 @@ from logspyq import LogseqAPI
 
 logseq = LogseqAPI(auth_token="test")
 
-logseq.UI.showMsg("Hello from Python!")
+logseq.call("logseq.UI.showMsg", "Hello from Python!")
