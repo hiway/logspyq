@@ -1,0 +1,15 @@
+[tool.poetry]
+name = "logspyq"
+version = "0.1.0"
+description = "Python for Logseq API and Plugins"
+authors = ["Harshad Sharma <harshad@sharma.io>"]
+readme = "README.md"
+packages = [{include = "logspyq", from = "src"}]
+
+[tool.poetry.dependencies]
+python = "^3.10"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

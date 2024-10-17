@@ -1,2 +1,4 @@
-# logspyq
+# Logspyq
+
 Python for Logseq API and Plugins
+
